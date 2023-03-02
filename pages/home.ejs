@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"
+          alt="Pokemon Logo"
+        />
+      </div>
+    </nav>
+    <% for (const pokemon of pokemons) { %>
+    <div class="card">
+      <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>" />
+      <h2><%= pokemon.name %></h2>
+      <h3>Order:</h3>
+      <h2><%= pokemon.order %></h2>
+      <h3>Moves:</h3>
+      <ul>
+        <% for (const move of pokemon.moves) { %>
+        <li><%= move.move.name %></li>
+        <% } %>
+      </ul>
+      <h3>Types:</h3>
+      <ul>
+        <% for (const type of pokemon.types) { %>
+        <li><%= type.type.name %></li>
+        <% } %>
+      </ul>
+    </div>
+    <% } %>
+  </body>
+</html>
